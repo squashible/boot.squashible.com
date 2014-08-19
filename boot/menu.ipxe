@@ -7,7 +7,7 @@ iseq ${squashible_goto} 1 && set menu ${squashible_goto} && goto ${squashible_go
 isset ${dracut_ip} || set dracut_ip ip=eth0:dhcp
 
 :squashible
-menu Squashible 
+menu SQUASHible (http://www.squashible.com)
 
 item --gap Default:
 item local ${space} Boot from local hdd
