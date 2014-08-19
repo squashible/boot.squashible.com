@@ -4,6 +4,7 @@
 set name ${mac:hexraw}
 
 # load the MAC-specific file
+echo Checking to see if there are any MAC specific files to load...
 chain --autofree macs/${mac:hexraw}.ipxe ||
 
 # load the menu
