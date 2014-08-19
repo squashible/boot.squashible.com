@@ -20,7 +20,7 @@ item fedora-20_minimal ${space} Squashible Minimal (Fedora)
 item --gap Tools:
 item shell ${space} iPXE shell
 
-choose menu || goto squashible_exit
+choose menu || goto squashible
 echo ${cls}
 goto ${menu} ||
 goto squashible_exit
@@ -29,13 +29,13 @@ goto squashible_exit
 clear menu
 chain menu.ipxe
 
-:minimal-debian
-goto debian-live-boot
-
-:minimal-fedora
+:centos-7_minimal
 goto dracut-boot
 
-:minimal-centos
+:debian-jessie_minimal
+goto debian-live-boot
+
+:fedora-20_minimal
 goto dracut-boot
 
 :debian-live-boot
