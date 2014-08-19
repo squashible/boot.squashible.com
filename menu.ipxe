@@ -1,8 +1,6 @@
 #!ipxe
 
-set url http://boot.squashible.com
-set mirror http://boot.squashible.com
-set squash_host boot.squashible.com
+set squash_host builder.squashible.com
 
 iseq ${squashible_goto} 1 && set menu ${squashible_goto} && goto ${squashible_goto} ||
 
