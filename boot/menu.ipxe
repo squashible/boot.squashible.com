@@ -1,0 +1,67 @@
+#!ipxe
+
+set url http://boot.squashible.com
+set mirror http://boot.squashible.com
+set squash_host boot.squashible.com
+
+iseq ${squashible_goto} 1 && set menu ${squashible_goto} && goto ${squashible_goto} ||
+
+isset ${dracut_ip} || set dracut_ip ip=eth0:dhcp
+
+:squashible
+
+menu SQUASHible 
+
+item --gap Default:
+item local ${space} Boot from local hdd
+item --gap SQUASHible Builds (CentOS)
+item minimal-centos ${space} SQUASHible Minimal (CentOS 7)
+item --gap SQUASHible Builds (Debian)
+item minimal-debian ${space} SQUASHible Minimal (Debian Jessie)
+item --gap SQUASHible Builds (Fedora)
+item minimal-fedora ${space} SQUASHible Minimal (Fedora)
+item --gap Tools:
+item shell ${space} iPXE shell
+
+
+choose menu || goto squashible
+echo ${cls}
+goto ${menu} ||
+goto squashible
+
+:squashible_exit
+clear menu
+chain menu.ipxe
+
+:minimal-debian
+goto debian-live-boot
+
+:minimal-fedora
+goto dracut-boot
+
+:minimal-centos
+goto dracut-boot
+
+:debian-live-boot
+kernel http://${squash_host}/s/${menu}/vmlinuz
+module http://${squash_host}/s/${menu}/initrd.img
+imgargs vmlinuz boot=live username=live hooks=filesystem fetch=http://${squash_host}/s/${menu}/filesystem.squashfs apparmor=1 security=apparmor console=tty0 console=ttyS0,115200
+boot
+goto squashible
+
+:dracut-boot
+kernel http://${squash_host}/s/${menu}/vmlinuz
+module http://${squash_host}/s/${menu}/initrd.img
+imgargs vmlinuz root=live:http://${squash_host}/s/${menu}/rootfs.img.tgz rootflags="compress=lzo" ${dracut_ip} nomodeset rd.writable.fsimg rd.debug rd.info rd.shell console=ttyS0,115200 console=tty0 enforcing=0
+boot
+goto squashible
+
+:local
+echo Booting from local disks ...
+exit 0
+
+:shell
+echo Type "exit" to return to menu.
+set menu main_menu
+shell
+goto squashible

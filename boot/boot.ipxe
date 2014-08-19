@@ -1,0 +1,10 @@
+#!ipxe
+
+# setup a default name
+set name ${mac:hexraw}
+
+# load the MAC-specific file
+chain --autofree macs/${mac:hexraw}.ipxe ||
+
+# load the menu
+chain --replace --autofree menu.ipxe ||
