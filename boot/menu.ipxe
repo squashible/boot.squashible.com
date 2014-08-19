@@ -11,12 +11,12 @@ menu Squashible
 
 item --gap Default:
 item local ${space} Boot from local hdd
-item --gap Squashible Builds (CentOS)
-item centos-7_minimal ${space} Squashible Minimal (CentOS 7)
-item --gap Squashible Builds (Debian)
-item debian-jessie_minimal ${space} Squashible Minimal (Debian Jessie)
-item --gap Squashible Builds (Fedora)
-item fedora-20_minimal ${space} Squashible Minimal (Fedora)
+item --gap CentOS Builds
+item centos-7_minimal ${space} Minimal (CentOS 7)
+item --gap Debian Builds
+item debian-jessie_minimal ${space} Minimal (Debian Jessie)
+item --gap Fedora Builds
+item fedora-20_minimal ${space} Minimal (Fedora 20)
 item --gap Tools:
 item shell ${space} iPXE shell
 
