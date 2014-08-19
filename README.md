@@ -1,1 +1,1 @@
-SQUASHible iPXE Boot Menu
+Squashible iPXE Boot Menu
