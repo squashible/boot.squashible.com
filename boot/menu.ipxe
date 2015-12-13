@@ -1,7 +1,6 @@
 #!ipxe
 
 set squash_host 24062686b26ac0cd2e58-8cb4aa249683b28be6b0d19bdead75c3.r31.cf1.rackcdn.com 
-set squash_host_dir squashible
 iseq ${squashible_goto} 1 && set menu ${squashible_goto} && goto ${squashible_goto} ||
 
 isset ${dracut_ip} || set dracut_ip ip=eth0:dhcp
@@ -39,16 +38,16 @@ goto debian-live-boot
 goto dracut-boot
 
 :debian-live-boot
-kernel http://${squash_host}/${squash_host_dir}/squashible-${menu}/vmlinuz
-module http://${squash_host}/${squash_host_dir}/squashible-${menu}/initrd.img
-imgargs vmlinuz boot=live username=live hooks=filesystem fetch=http://${squash_host}/${squash_host_dir}/squashible-${menu}/filesystem.squashfs apparmor=1 security=apparmor console=tty0 console=ttyS0,115200
+kernel http://${squash_host}/squashible-${menu}/vmlinuz
+module http://${squash_host}/squashible-${menu}/initrd.img
+imgargs vmlinuz boot=live username=live hooks=filesystem fetch=http://${squash_host}/squashible-${menu}/filesystem.squashfs apparmor=1 security=apparmor console=tty0 console=ttyS0,115200
 boot
 goto squashible_exit
 
 :dracut-boot
-kernel http://${squash_host}/${squash_host_dir}/squashible-${menu}/vmlinuz
-module http://${squash_host}/${squash_host_dir}/squashible-${menu}/initrd.img
-imgargs vmlinuz root=live:http://${squash_host}/${squash_host_dir}/squashible-${menu}/rootfs.img rootflags="compress=lzo" ${dracut_ip} nomodeset rd.writable.fsimg rd.debug rd.info rd.shell console=tty0 console=ttyS0,115200 enforcing=0
+kernel http://${squash_host}/squashible-${menu}/vmlinuz
+module http://${squash_host}/squashible-${menu}/initrd.img
+imgargs vmlinuz root=live:http://${squash_host}/squashible-${menu}/rootfs.img rootflags="compress=lzo" ${dracut_ip} nomodeset rd.writable.fsimg rd.debug rd.info rd.shell console=tty0 console=ttyS0,115200 enforcing=0
 boot
 goto squashible_exit
 
