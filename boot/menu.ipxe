@@ -1,7 +1,7 @@
 #!ipxe
 
-set squash_host builder.squashible.com
-set squash_host_dir live_images
+set squash_host 24062686b26ac0cd2e58-8cb4aa249683b28be6b0d19bdead75c3.r31.cf1.rackcdn.com 
+set squash_host_dir squashible
 iseq ${squashible_goto} 1 && set menu ${squashible_goto} && goto ${squashible_goto} ||
 
 isset ${dracut_ip} || set dracut_ip ip=eth0:dhcp
@@ -16,7 +16,7 @@ item centos-7_minimal ${space} Minimal (CentOS 7)
 item --gap Debian Builds
 item debian-jessie_minimal ${space} Minimal (Debian Jessie)
 item --gap Fedora Builds
-item fedora-20_minimal ${space} Minimal (Fedora 20)
+item fedora-23-minimal ${space} Minimal (Fedora 20)
 item --gap Tools:
 item shell ${space} iPXE shell
 
@@ -35,7 +35,7 @@ goto dracut-boot
 :debian-jessie_minimal
 goto debian-live-boot
 
-:fedora-20_minimal
+:fedora-23-minimal
 goto dracut-boot
 
 :debian-live-boot
