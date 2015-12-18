@@ -47,7 +47,7 @@ goto squashible_exit
 :dracut-boot
 kernel http://${squash_host}/squashible-${menu}/vmlinuz
 module http://${squash_host}/squashible-${menu}/initrd.img
-imgargs vmlinuz root=live:http://${squash_host}/squashible-${menu}/rootfs.img ${dracut_ip} nomodeset rd.writable.fsimg rd.debug rd.info rd.shell rd.debug console=tty0 console=ttyS0,115200 enforcing=0
+imgargs vmlinuz root=live:http://${squash_host}/squashible-${menu}/rootfs.img ${dracut_ip} nomodeset rd.writable.fsimg rd.debug rd.info rd.shell rd.live.debug=1 console=tty0 console=ttyS0,115200 enforcing=0
 boot
 goto squashible_exit
 
