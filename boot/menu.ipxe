@@ -38,6 +38,7 @@ goto debian-live-boot
 goto dracut-boot
 
 :debian-live-boot
+imgfree
 kernel http://${squash_host}/squashible-${menu}/vmlinuz
 module http://${squash_host}/squashible-${menu}/initrd.img
 imgargs vmlinuz boot=live username=live hooks=filesystem fetch=http://${squash_host}/squashible-${menu}/filesystem.squashfs apparmor=1 security=apparmor console=tty0 console=ttyS0,115200
@@ -45,6 +46,7 @@ boot
 goto squashible_exit
 
 :dracut-boot
+imgfree
 kernel http://${squash_host}/squashible-${menu}/vmlinuz
 module http://${squash_host}/squashible-${menu}/initrd.img
 imgargs vmlinuz root=live:http://${squash_host}/squashible-${menu}/rootfs.img ${dracut_ip} nomodeset rd.writable.fsimg rd.debug rd.info rd.shell rd.live.debug=1 enforcing=0
