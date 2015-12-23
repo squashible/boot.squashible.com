@@ -11,9 +11,9 @@ menu SQUASHible (http://www.squashible.com)
 item --gap Default:
 item local ${space} Boot from local hdd
 item --gap CentOS Builds
-item centos-7_minimal ${space} Minimal (CentOS 7)
+item centos-7-minimal ${space} Minimal (CentOS 7)
 item --gap Debian Builds
-item debian-jessie_minimal ${space} Minimal (Debian Jessie)
+item debian-jessie-minimal ${space} Minimal (Debian Jessie)
 item --gap Fedora Builds
 item fedora-23-minimal ${space} Minimal (Fedora 23)
 item --gap Tools:
