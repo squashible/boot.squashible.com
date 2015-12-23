@@ -3,7 +3,7 @@
 set squash_host images.squashible.com 
 iseq ${squashible_goto} 1 && set menu ${squashible_goto} && goto ${squashible_goto} ||
 
-isset ${dracut_ip} || set dracut_ip ip=eth0:dhcp
+isset ${dracut_ip} || set dracut_ip ip=dhcp
 
 :squashible
 menu SQUASHible (http://www.squashible.com)
