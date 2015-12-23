@@ -14,6 +14,8 @@ item --gap Debian Builds
 item debian-jessie-minimal ${space} Minimal (Debian Jessie)
 item --gap Fedora Builds
 item fedora-23-minimal ${space} Minimal (Fedora 23)
+item --gap Ubuntu Builds
+item ubuntu-15.10-minimal ${space} Minimal (Ubuntu 15.10)
 item --gap Tools:
 item shell ${space} iPXE shell
 
@@ -30,6 +32,9 @@ chain menu.ipxe
 goto dracut-boot
 
 :debian-jessie-minimal
+goto debian-live-boot
+
+:ubuntu-15.10-minimal
 goto debian-live-boot
 
 :fedora-23-minimal
