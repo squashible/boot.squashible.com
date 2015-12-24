@@ -44,7 +44,7 @@ goto dracut-boot
 imgfree
 kernel http://${squash_host}/images/squashible-${menu}/vmlinuz
 module http://${squash_host}/images/squashible-${menu}/initrd.img
-imgargs vmlinuz boot=live username=live hooks=filesystem fetch=http://${squash_host}/images/squashible-${menu}/filesystem.squashfs apparmor=1 security=apparmor console=tty0 console=ttyS0,115200
+imgargs vmlinuz boot=live username=live hooks=filesystem debug fetch=http://${squash_host}/images/squashible-${menu}/filesystem.squashfs apparmor=1 security=apparmor console=tty0 console=ttyS0,115200
 boot
 goto squashible_exit
 
