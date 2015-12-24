@@ -52,7 +52,7 @@ goto squashible_exit
 imgfree
 kernel http://${squash_host}/images/squashible-${menu}/vmlinuz
 module http://${squash_host}/images/squashible-${menu}/initrd.img
-imgargs vmlinuz root=live:http://${squash_host}/images/squashible-${menu}/filesystem.squashfs ip=dhcp nomodeset rd.writable.fsimg rd.info enforcing=0 rd.shell
+imgargs vmlinuz root=live:http://${squash_host}/images/squashible-${menu}/filesystem.squashfs ip=dhcp nomodeset rd.writable.fsimg rd.info enforcing=0 rd.shell rd.live.debug=1 rd.shell rd.debug
 boot
 goto squashible_exit
 
