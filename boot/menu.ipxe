@@ -14,6 +14,8 @@ item --gap Debian Builds
 item debian-jessie-minimal ${space} Minimal (Debian Jessie)
 item --gap Fedora Builds
 item fedora-23-minimal ${space} Minimal (Fedora 23)
+item --gap OpenSUSE Builds
+item opensuse-42.1-minimal ${space} Minimal (OpenSUSE 42.1)
 item --gap Ubuntu Builds
 item ubuntu-15.10-minimal ${space} Minimal (Ubuntu 15.10)
 item --gap Tools:
@@ -34,10 +36,13 @@ goto dracut-boot
 :debian-jessie-minimal
 goto debian-live-boot
 
-:ubuntu-15.10-minimal
-goto ubuntu-dracut-boot
-
 :fedora-23-minimal
+goto dracut-boot
+
+:opensuse-42.1-minimal
+goto dracut-boot
+
+:ubuntu-15.10-minimal
 goto dracut-boot
 
 :debian-live-boot
@@ -45,14 +50,6 @@ imgfree
 kernel http://${squash_host}/images/squashible-${menu}/vmlinuz
 module http://${squash_host}/images/squashible-${menu}/initrd.img
 imgargs vmlinuz boot=live username=live hooks=filesystem debug fetch=http://${squash_host}/images/squashible-${menu}/filesystem.squashfs apparmor=1 security=apparmor console=tty0 console=ttyS0,115200
-boot
-goto squashible_exit
-
-:ubuntu-dracut-boot
-imgfree
-kernel http://${squash_host}/images/squashible-${menu}/vmlinuz
-module http://${squash_host}/images/squashible-${menu}/initrd.img
-imgargs vmlinuz root=live:http://${squash_host}/images/squashible-${menu}/rootfs.img ip=dhcp nomodeset rd.writable.fsimg rd.info enforcing=0 rd.shell rd.live.debug=1 rd.shell rd.debug
 boot
 goto squashible_exit
 
