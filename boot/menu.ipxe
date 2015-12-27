@@ -9,15 +9,15 @@ menu SQUASHible (http://www.squashible.com)
 item --gap Default:
 item local ${space} Boot from local hdd
 item --gap CentOS Builds
-item centos-7-minimal ${space} Minimal (CentOS 7)
+item centos-7-minimal ${space} CentOS 7 - Minimal
 item --gap Debian Builds
-item debian-8-minimal ${space} Minimal (Debian 8)
+item debian-8-minimal ${space} Debian 8 - Minimal
 item --gap Fedora Builds
-item fedora-23-minimal ${space} Minimal (Fedora 23)
+item fedora-23-minimal ${space} Fedora 23 - Minimal
 item --gap OpenSUSE Builds
-item opensuse-42.1-minimal ${space} Minimal (OpenSUSE 42.1)
+item opensuse-42.1-minimal ${space} OpenSUSE 42.1 - Minimal
 item --gap Ubuntu Builds
-item ubuntu-15.10-minimal ${space} Minimal (Ubuntu 15.10)
+item ubuntu-15.10-minimal ${space} Ubuntu 15.10 - Minimal
 item --gap Tools:
 item shell ${space} iPXE shell
 
