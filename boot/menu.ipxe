@@ -11,7 +11,7 @@ item local ${space} Boot from local hdd
 item --gap CentOS Builds
 item centos-7-minimal ${space} Minimal (CentOS 7)
 item --gap Debian Builds
-item debian-jessie-minimal ${space} Minimal (Debian Jessie)
+item debian-8-minimal ${space} Minimal (Debian 8)
 item --gap Fedora Builds
 item fedora-23-minimal ${space} Minimal (Fedora 23)
 item --gap OpenSUSE Builds
@@ -31,27 +31,11 @@ clear menu
 chain menu.ipxe
 
 :centos-7-minimal
-goto dracut-boot
-
-:debian-jessie-minimal
-goto debian-live-boot
-
+:debian-8-minimal
 :fedora-23-minimal
-goto dracut-boot
-
 :opensuse-42.1-minimal
-goto dracut-boot
-
 :ubuntu-15.10-minimal
 goto dracut-boot
-
-:debian-live-boot
-imgfree
-kernel http://${squash_host}/images/squashible-${menu}/vmlinuz
-module http://${squash_host}/images/squashible-${menu}/initrd.img
-imgargs vmlinuz boot=live username=live hooks=filesystem debug fetch=http://${squash_host}/images/squashible-${menu}/filesystem.squashfs apparmor=1 security=apparmor console=tty0 console=ttyS0,115200
-boot
-goto squashible_exit
 
 :dracut-boot
 imgfree
