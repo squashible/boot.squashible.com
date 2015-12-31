@@ -18,6 +18,8 @@ item --gap OpenSUSE Builds
 item opensuse-42.1-minimal ${space} OpenSUSE 42.1 - Minimal
 item --gap Ubuntu Builds
 item ubuntu-15.10-minimal ${space} Ubuntu 15.10 - Minimal
+item --gap XenServer Builds
+item xenserver-dundee ${space} XenServer Dundee Beta 2
 item --gap Tools:
 item shell ${space} iPXE shell
 
@@ -44,6 +46,14 @@ module http://${squash_host}/images/squashible-${menu}/initrd.img
 imgargs vmlinuz root=live:http://${squash_host}/images/squashible-${menu}/rootfs.img ip=dhcp nameserver=8.8.8.8 nameserver=8.8.4.4 nomodeset rd.writable.fsimg rd.info enforcing=0 rd.shell rd.debug rd.live.debug=1
 boot
 goto squashible_exit
+
+:xenserver-dundee
+set dracut_ip ip=${mgmt_ip_address}::${mgmt_gateway_ip}:${mgmt_netmask}:${hostname}:${mgmt_device}:none nameserver=${dns}
+kernel http://${squash_host}/images/squashible-${menu}/xen dom0_mem=8192M,max:8192M watchdog dom0_max_vcpus=1 crashkernel=128M@32M cpuid_mask_xsave_eax=0 console=vga vga=mode-0x0311
+module http://${squash_host}/images/squashible-${menu}/vmlinuz
+module http://${squash_host}/images/squashible-${menu}/initrd.img
+imgargs vmlinuz root=live:http://${squash_host}/images/squashible-${menu}/rootfs.img ip=dhcp nameserver=8.8.8.8 nameserver=8.8.4.4 nomodeset rd.writable.fsimg rd.info rd.shell enforcing=1 ro nolvm hpet=disable xencons=hvc console=hvc0 console=tty0 quiet vga=7
+boot
 
 :local
 echo Booting from local disks ...
