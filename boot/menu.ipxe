@@ -49,7 +49,6 @@ goto squashible_exit
 
 :xenserver-dundee
 imgfree
-set dracut_ip ip=${mgmt_ip_address}::${mgmt_gateway_ip}:${mgmt_netmask}:${hostname}:${mgmt_device}:none nameserver=${dns}
 kernel http://${squash_host}/images/squashible-${menu}/xen dom0_mem=752M,max:752M watchdog dom0_max_vcpus=1 crashkernel=128M@32M console=vga vga=mode-0x0311
 module http://${squash_host}/images/squashible-${menu}/vmlinuz
 module http://${squash_host}/images/squashible-${menu}/initrd.img
