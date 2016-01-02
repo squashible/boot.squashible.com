@@ -52,7 +52,7 @@ imgfree
 kernel http://${squash_host}/images/squashible-${menu}/xen dom0_mem=752M,max:752M watchdog dom0_max_vcpus=1 crashkernel=128M@32M console=vga vga=mode-0x0311
 module http://${squash_host}/images/squashible-${menu}/vmlinuz
 module http://${squash_host}/images/squashible-${menu}/initrd.img
-imgargs vmlinuz root=live:http://${squash_host}/images/squashible-${menu}/rootfs.img ip=dhcp nameserver=8.8.8.8 nameserver=8.8.4.4 nomodeset rd.writable.fsimg rd.info rd.shell enforcing=1 ro nolvm hpet=disable xencons=hvc console=hvc0 console=tty0 quiet vga=785 splash
+imgargs vmlinuz root=live:http://${squash_host}/images/squashible-${menu}/rootfs.img ip=dhcp nameserver=8.8.8.8 nameserver=8.8.4.4 nomodeset rd.writable.fsimg rd.info rd.shell enforcing=1 ro nolvm hpet=disable xencons=hvc console=hvc0 console=tty0 quiet vga=785
 boot
 
 :local
