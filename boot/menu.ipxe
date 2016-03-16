@@ -36,6 +36,7 @@ chain menu.ipxe
 :centos-7-minimal
 :debian-8-minimal
 :fedora-23-minimal
+:fedora-23-kvm
 :opensuse-42.1-minimal
 :ubuntu-15.10-minimal
 goto dracut-boot
