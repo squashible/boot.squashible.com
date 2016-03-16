@@ -14,6 +14,7 @@ item --gap Debian Builds
 item debian-8-minimal ${space} Debian 8 - Minimal
 item --gap Fedora Builds
 item fedora-23-minimal ${space} Fedora 23 - Minimal
+item fedora-23-kvm ${space} Fedora 23 - Openstack KVM
 item --gap OpenSUSE Builds
 item opensuse-42.1-minimal ${space} OpenSUSE 42.1 - Minimal
 item --gap Ubuntu Builds
