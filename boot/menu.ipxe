@@ -1,6 +1,7 @@
 #!ipxe
 
-set squash_host images.squashible.com 
+set squash_host images.squashible.com
+
 iseq ${squashible_goto} 1 && set menu ${squashible_goto} && goto ${squashible_goto} ||
 
 :squashible
@@ -45,7 +46,7 @@ goto dracut-boot
 imgfree
 kernel http://${squash_host}/images/squashible-${menu}/vmlinuz
 module http://${squash_host}/images/squashible-${menu}/initrd.img
-imgargs vmlinuz root=live:http://${squash_host}/images/squashible-${menu}/rootfs.img ip=dhcp nameserver=8.8.8.8 nameserver=8.8.4.4 nomodeset rd.writable.fsimg rd.info enforcing=0 rd.shell rd.debug rd.live.debug=1
+imgargs vmlinuz root=live:torrent://${squash_host}/images/squashible-${menu}/rootfs.img.torrent ip=dhcp nameserver=8.8.8.8 nameserver=8.8.4.4 nomodeset rd.writable.fsimg rd.info enforcing=0 rd.shell rd.debug rd.live.debug=1
 boot
 goto squashible_exit
 
