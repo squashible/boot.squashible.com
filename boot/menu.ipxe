@@ -19,7 +19,7 @@ item fedora-23-kvm ${space} Fedora 23 - Openstack KVM
 item --gap OpenSUSE Builds
 item opensuse-42.1-minimal ${space} OpenSUSE 42.1 - Minimal
 item --gap Ubuntu Builds
-item ubuntu-15.10-minimal ${space} Ubuntu 15.10 - Minimal
+item ubuntu-16.04-minimal ${space} Ubuntu 16.04 - Minimal
 item --gap XenServer Builds
 item xenserver-dundee ${space} XenServer Dundee Beta 2
 item --gap Tools:
@@ -39,7 +39,7 @@ chain menu.ipxe
 :fedora-23-minimal
 :fedora-23-kvm
 :opensuse-42.1-minimal
-:ubuntu-15.10-minimal
+:ubuntu-16.04-minimal
 goto dracut-boot
 
 :dracut-boot
