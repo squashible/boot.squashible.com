@@ -41,6 +41,7 @@ chain menu.ipxe
 :fedora-23-kvm
 :opensuse-42.1-minimal
 :ubuntu-16.04-minimal
+:ubuntu-16.04-kvm
 goto dracut-boot
 
 :dracut-boot
