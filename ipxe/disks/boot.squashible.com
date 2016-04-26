@@ -21,7 +21,7 @@ echo Attempting chainload of boot.squashible.com...
 goto menu || goto failsafe
 
 :menu
-chain http://boot.squashible.com/boot.ipxe
+chain http://boot.squashible.com/menu.ipxe
 goto boot
 
 :failsafe
