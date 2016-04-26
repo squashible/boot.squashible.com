@@ -1,0 +1,25 @@
+sudo: true
+language: c
+before_install:
+- sudo apt-get update -qq
+- sudo apt-get install -qq binutils-dev genisoimage liblzma-dev syslinux
+script:
+- "./script/prep-release.sh"
+before_deploy:
+- cd build
+deploy:
+  provider: s3
+  access_key_id:
+    secure: "a2/CFdvEk779PTQO5dXaizs6jePe/njwr/GYrhuDHk/Yi6A2KxbXzMuxt+4v0hSG7ZVJ5YYJwrv+ZZCdN0mrb2OOnWU9wRWHZ3GYCq79FBZFQrFB7dRP19O+RT70Wa4yhblu8YNmqeZ5XIrEo0cKmfzy2hjwDuoGt38ycfJLDHo="
+  secret_access_key:
+    secure: "REsk+CqLRq5VIH3uKAEmHimUOD89EEgSzqfBWOaL/WurJ7ToKk97xQPRgwJqKz6C7/Y40of5ZS1wefjw5ponSu0NjUjg7yHH4ySGAdUv70Ft9Bv7cXJNoHwlvDVNZYOUThhlRaGNCXY+3gFCbsdyEucIDDZSuODBo3pozsaH8gk="
+  bucket:
+    secure: "MXUmyUEt5EOIYVGStUE1JDX2Xl4RwOFutr1bfR6BNO7rjN296IsumbORYurvj8cavOhGEZj5lZ8LKkhJZl9socf5wN2VbIsLWNVEWhLAmUZ1TpLIsHhHTiRKA+TN33KI9nRB6hqnaFPbRKOZ4clol0vapp+YeX4+rhzWpZDzFYU="
+  skip_cleanup: true
+  on:
+    repo: squashible/boot.squashible.com
+notifications:
+  email:
+    - antony@mes.ser.li
+
+
