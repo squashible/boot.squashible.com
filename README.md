@@ -1,1 +1,1 @@
-Squashible iPXE Boot Menu
+boot.squashible.com iPXE Boot Menu
