@@ -28,7 +28,7 @@ cd ipxe_build/src
 IPXE_HASH=`git log -n 1 --pretty=format:"%H"`
 
 # generate boot.squashible.com iPXE disks
-for ipxe_config in `ls ../../ipxe/`
+for ipxe_config in `ls ../../ipxe/disks`
 do
   make bin/ipxe.dsk bin/ipxe.iso bin/ipxe.lkrn bin/ipxe.usb bin/ipxe.kpxe bin/undionly.kpxe \
   EMBED=../../ipxe/disks/$ipxe_config
