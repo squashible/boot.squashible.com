@@ -5,7 +5,7 @@ set squash_host images.squashible.com
 iseq ${squashible_goto} 1 && set menu ${squashible_goto} && goto ${squashible_goto} ||
 
 :squashible
-menu SQUASHible (http://www.squashible.com)
+menu squashible (http://squashible.com)
 
 item --gap Default:
 item local ${space} Boot from local hdd
